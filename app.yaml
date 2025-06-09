@@ -7,6 +7,7 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: bucket23/nginx-demo
     argocd-image-updater.argoproj.io/write-back-method: git
     argocd-image-updater.argoproj.io/bucket23-nginx-demo.update-strategy: values
+    argocd-image-updater.argoproj.io/bucket23-nginx-demo.value: image.tag
 spec:
   project: default
   source:
