@@ -4,5 +4,5 @@ helm:
     value: bucket23/nginx-demo
     forcestring: true
   - name: image.tag
-    value: v1.2
+    value: v1.1
     forcestring: true
