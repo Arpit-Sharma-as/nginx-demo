@@ -1,8 +1,0 @@
-helm:
-  parameters:
-  - name: image.name
-    value: bucket23/nginx-demo
-    forcestring: true
-  - name: image.tag
-    value: v1.2
-    forcestring: true
