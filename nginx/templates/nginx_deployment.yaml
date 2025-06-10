@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-demo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-demo
+  template:
+    metadata:
+      labels:
+        app: nginx-demo
+    spec:
+      containers:
+        - name: nginx
+          image: https://hub.docker.com/r/bucket23/nginx-demo # e.g., ghcr.io/username/image:tag
+          ports:
+            - containerPort: 80
+          env:
+            - name: Arpit-Sharma-as
+              valueFrom:
+                secretKeyRef:
+                  name: github-creds
+                  key: Arpit-Sharma-as
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: github-creds
+                  key: token
+      imagePullSecrets:
+        - name: dockerhub-creds
