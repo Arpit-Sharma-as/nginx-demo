@@ -7,17 +7,17 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: bucket23/nginx-demo
     argocd-image-updater.argoproj.io/write-back-method: git
     argocd-image-updater.argoproj.io/git-branch: main
-    argocd-image-updater.argoproj.io/nginx.values-file: nginx/values.yaml
+    argocd-image-updater.argoproj.io/nginx.values-file: values.yaml
     argocd-image-updater.argoproj.io/nginx.value-path: image.tag
 spec:
   project: default
   source:
     repoURL: https://github.com/Arpit-Sharma-as/nginx-demo.git
     path: nginx
-    targetRevision: feature/k8s
+    targetRevision: main
     helm:
       valueFiles:
-        - nginx/values.yaml
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: default

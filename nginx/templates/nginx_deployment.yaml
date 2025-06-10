@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: https://hub.docker.com/r/bucket23/nginx-demo # e.g., ghcr.io/username/image:tag
+          image: bucket23/nginx-demo:v1.1 # e.g., ghcr.io/username/image:tag
           ports:
             - containerPort: 80
           env:
